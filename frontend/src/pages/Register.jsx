@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { UserPlus } from 'lucide-react';
 import StyledInput from '../components/StyledInput';
+import ThemeToggle from '../components/ThemeToggle';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -48,6 +49,9 @@ const Register = () => {
 
   return (
     <div className="auth-container">
+      <div className="auth-theme-toggle">
+        <ThemeToggle />
+      </div>
       <div className="auth-card">
         <div className="auth-header">
           <UserPlus size={40} />

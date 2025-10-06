@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { LogIn } from 'lucide-react';
 import StyledInput from '../components/StyledInput';
+import ThemeToggle from '../components/ThemeToggle';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -31,6 +32,9 @@ const Login = () => {
 
   return (
     <div className="auth-container">
+      <div className="auth-theme-toggle">
+        <ThemeToggle />
+      </div>
       <div className="auth-card">
         <div className="auth-header">
           <LogIn size={40} />

@@ -271,6 +271,14 @@ body {
   align-items: center;
   padding: 2rem;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  position: relative;
+}
+
+.auth-theme-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
 }
 
 .auth-card {
