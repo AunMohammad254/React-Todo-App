@@ -1,25 +1,26 @@
-import React from 'react';
+import React from "react";
 
-const StyledTextarea = ({ 
-  id, 
+const StyledTextarea = ({
+  id,
   name,
-  value, 
-  onChange, 
-  placeholder, 
+  value,
+  onChange,
+  placeholder,
   label,
   required = false,
   rows = 2,
   autoFocus = false,
   className = "",
-  ...props 
+  ...props
 }) => {
-  const textareaId = id || name || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+  const textareaId =
+    id || name || `textarea-${Math.random().toString(36).substr(2, 9)}`;
 
   return (
     <div className={`styled-input-container ${className}`}>
       <div className="styled-input-wrapper">
         <span className="styled-input-accent" />
-        <textarea 
+        <textarea
           id={textareaId}
           name={name}
           value={value}
@@ -31,10 +32,7 @@ const StyledTextarea = ({
           className="styled-textarea"
           {...props}
         />
-        <label 
-          htmlFor={textareaId} 
-          className="styled-input-label"
-        >
+        <label htmlFor={textareaId} className="styled-input-label">
           {label || placeholder}
         </label>
       </div>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { CheckCircle, Circle } from 'lucide-react';
+import React from "react";
+import { CheckCircle, Circle } from "lucide-react";
 
 const TodoStats = ({ total, completed }) => {
   return (

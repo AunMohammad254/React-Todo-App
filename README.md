@@ -40,12 +40,14 @@
 ## ✨ Features
 
 ### 🔐 **Authentication & Security**
+
 - **Secure User Registration & Login** with JWT tokens
 - **Password Encryption** using bcryptjs
 - **Protected Routes** with authentication middleware
 - **Automatic Token Refresh** and session management
 
 ### 📝 **Todo Management**
+
 - **Create, Read, Update, Delete** todos with ease
 - **Rich Text Support** with title and description fields
 - **Real-time Updates** without page refresh
@@ -53,6 +55,7 @@
 - **Todo Statistics** with completion tracking
 
 ### 🎨 **User Experience**
+
 - **Dark/Light Theme Toggle** with persistent preferences
 - **Responsive Design** that works on all devices
 - **Smooth Animations** and modern UI transitions
@@ -60,6 +63,7 @@
 - **Error Handling** with user-friendly messages
 
 ### 🔧 **Technical Features**
+
 - **RESTful API** with Express.js backend
 - **MongoDB Integration** with Mongoose ODM
 - **Modern React Hooks** and Context API
@@ -71,6 +75,7 @@
 ## 🛠️ Tech Stack
 
 ### **Frontend**
+
 - **React 19.1.1** - Modern UI library with latest features
 - **Vite 7.1.7** - Next-generation frontend tooling
 - **React Router DOM 7.9.3** - Declarative routing
@@ -79,6 +84,7 @@
 - **Tailwind CSS 4.1.14** - Utility-first CSS framework
 
 ### **Backend**
+
 - **Node.js** - JavaScript runtime environment
 - **Express.js 5.1.0** - Fast, unopinionated web framework
 - **MongoDB** - NoSQL database with Atlas cloud hosting
@@ -87,6 +93,7 @@
 - **bcryptjs 3.0.2** - Password hashing library
 
 ### **Development Tools**
+
 - **ESLint** - Code linting and formatting
 - **Nodemon** - Auto-restart development server
 - **CORS** - Cross-Origin Resource Sharing
@@ -99,12 +106,15 @@
 <div align="center">
 
 ### 🌅 Light Theme
+
 ![Light Theme Dashboard](https://via.placeholder.com/800x500/f8fafc/1e293b?text=Light+Theme+Dashboard)
 
 ### 🌙 Dark Theme
+
 ![Dark Theme Dashboard](https://via.placeholder.com/800x500/1e293b/f8fafc?text=Dark+Theme+Dashboard)
 
 ### 📱 Mobile Responsive
+
 ![Mobile View](https://via.placeholder.com/400x600/3b82f6/ffffff?text=Mobile+Responsive+Design)
 
 </div>
@@ -228,18 +238,22 @@ VITE_APP_VERSION=1.0.0
 ### MongoDB Atlas Setup
 
 1. **Create a MongoDB Atlas Account**
+
    - Visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
    - Sign up for a free account
 
 2. **Create a New Cluster**
+
    - Choose the free tier (M0 Sandbox)
    - Select your preferred cloud provider and region
 
 3. **Configure Database Access**
+
    - Create a database user with read/write permissions
    - Note down the username and password
 
 4. **Configure Network Access**
+
    - Add your IP address to the IP Access List
    - For development, you can use `0.0.0.0/0` (not recommended for production)
 
@@ -303,25 +317,30 @@ npm run test         # Run tests (when implemented)
 ### Using the Application
 
 #### 1. **User Registration**
+
 - Navigate to the registration page
 - Enter username, email, and password
 - Click "Sign Up" to create your account
 
 #### 2. **User Login**
+
 - Enter your email and password
 - Click "Login" to access your todos
 
 #### 3. **Managing Todos**
+
 - **Create**: Click the "+" button and fill in todo details
 - **Edit**: Click on any todo to edit its content
 - **Complete**: Check the checkbox to mark as completed
 - **Delete**: Click the delete button to remove a todo
 
 #### 4. **Search & Filter**
+
 - Use the search bar to find specific todos
 - Filter by: All, Active, or Completed todos
 
 #### 5. **Theme Toggle**
+
 - Click the theme toggle button to switch between light and dark modes
 - Your preference is automatically saved
 
@@ -330,6 +349,7 @@ npm run test         # Run tests (when implemented)
 ## 🌐 API Documentation
 
 ### Base URL
+
 ```
 http://localhost:5000/api
 ```
@@ -337,6 +357,7 @@ http://localhost:5000/api
 ### Authentication Endpoints
 
 #### Register User
+
 ```http
 POST /auth/register
 Content-Type: application/json
@@ -349,6 +370,7 @@ Content-Type: application/json
 ```
 
 #### Login User
+
 ```http
 POST /auth/login
 Content-Type: application/json
@@ -362,12 +384,14 @@ Content-Type: application/json
 ### Todo Endpoints
 
 #### Get All Todos
+
 ```http
 GET /todos
 Authorization: Bearer <jwt_token>
 ```
 
 #### Create Todo
+
 ```http
 POST /todos
 Authorization: Bearer <jwt_token>
@@ -380,6 +404,7 @@ Content-Type: application/json
 ```
 
 #### Update Todo
+
 ```http
 PUT /todos/:id
 Authorization: Bearer <jwt_token>
@@ -393,6 +418,7 @@ Content-Type: application/json
 ```
 
 #### Delete Todo
+
 ```http
 DELETE /todos/:id
 Authorization: Bearer <jwt_token>
@@ -401,6 +427,7 @@ Authorization: Bearer <jwt_token>
 ### Response Format
 
 #### Success Response
+
 ```json
 {
   "success": true,
@@ -416,6 +443,7 @@ Authorization: Bearer <jwt_token>
 ```
 
 #### Error Response
+
 ```json
 {
   "success": false,
@@ -464,6 +492,7 @@ VITE_API_URL=https://your-backend-url.onrender.com/api
 #### 1. Prepare Backend
 
 Create `backend/.gitignore`:
+
 ```
 node_modules/
 .env
@@ -523,6 +552,7 @@ npm run test
 ### Manual Testing Checklist
 
 #### Authentication Flow
+
 - [ ] User can register with valid credentials
 - [ ] User cannot register with invalid email
 - [ ] User cannot register with weak password
@@ -532,6 +562,7 @@ npm run test
 - [ ] User can logout successfully
 
 #### Todo Management
+
 - [ ] User can create a new todo
 - [ ] User can view all their todos
 - [ ] User can edit existing todos
@@ -541,6 +572,7 @@ npm run test
 - [ ] User can filter todos by status
 
 #### UI/UX Testing
+
 - [ ] Theme toggle works correctly
 - [ ] App is responsive on mobile devices
 - [ ] Loading states display properly
@@ -567,32 +599,38 @@ We welcome contributions from the community! Here's how you can help:
 ### Getting Started
 
 1. **Fork the Repository**
+
    ```bash
    # Click the "Fork" button on GitHub
    ```
 
 2. **Clone Your Fork**
+
    ```bash
    git clone https://github.com/yourusername/todo-app.git
    cd todo-app
    ```
 
 3. **Create a Feature Branch**
+
    ```bash
    git checkout -b feature/amazing-new-feature
    ```
 
 4. **Make Your Changes**
+
    - Follow the existing code style
    - Add tests for new features
    - Update documentation as needed
 
 5. **Commit Your Changes**
+
    ```bash
    git commit -m "Add amazing new feature"
    ```
 
 6. **Push to Your Fork**
+
    ```bash
    git push origin feature/amazing-new-feature
    ```
@@ -697,7 +735,7 @@ SOFTWARE.
 
 ### Inspiration & Resources
 
-- **[TodoMVC](http://todomvc.com/)** - Helping you select an MV* framework
+- **[TodoMVC](http://todomvc.com/)** - Helping you select an MV\* framework
 - **[React Documentation](https://react.dev/)** - Official React documentation
 - **[MongoDB University](https://university.mongodb.com/)** - Free MongoDB courses
 - **[Tailwind UI](https://tailwindui.com/)** - Beautiful UI components

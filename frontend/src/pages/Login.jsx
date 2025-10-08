@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { LogIn } from 'lucide-react';
-import StyledInput from '../components/StyledInput';
-import ThemeToggle from '../components/ThemeToggle';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { LogIn } from "lucide-react";
+import StyledInput from "../components/StyledInput";
+import ThemeToggle from "../components/ThemeToggle";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: '', password: '' });
-  const [error, setError] = useState('');
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError('');
+    setError("");
   };
 
   const handleSubmit = async (e) => {
@@ -22,9 +22,9 @@ const Login = () => {
     setLoading(true);
     try {
       await login(formData.email, formData.password);
-      navigate('/todos');
+      navigate("/todos");
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed');
+      setError(err.response?.data?.message || "Login failed");
     } finally {
       setLoading(false);
     }
@@ -66,7 +66,7 @@ const Login = () => {
           />
 
           <button type="submit" className="btn-primary" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Check, Trash2, Edit2, X } from 'lucide-react';
-import StyledInput from './StyledInput';
-import StyledTextarea from './StyledTextarea';
+import React, { useState } from "react";
+import { Check, Trash2, Edit2, X } from "lucide-react";
+import StyledInput from "./StyledInput";
+import StyledTextarea from "./StyledTextarea";
 
 const TodoItem = ({ todo, onUpdate, onDelete, onToggle }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(todo.title);
-  const [editDescription, setEditDescription] = useState(todo.description || '');
+  const [editDescription, setEditDescription] = useState(
+    todo.description || ""
+  );
 
   const handleUpdate = () => {
     if (editTitle.trim()) {
@@ -17,7 +19,7 @@ const TodoItem = ({ todo, onUpdate, onDelete, onToggle }) => {
 
   const handleCancel = () => {
     setEditTitle(todo.title);
-    setEditDescription(todo.description || '');
+    setEditDescription(todo.description || "");
     setIsEditing(false);
   };
 
@@ -50,7 +52,7 @@ const TodoItem = ({ todo, onUpdate, onDelete, onToggle }) => {
   }
 
   return (
-    <div className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+    <div className={`todo-item ${todo.completed ? "completed" : ""}`}>
       <div className="todo-content">
         <input
           type="checkbox"
