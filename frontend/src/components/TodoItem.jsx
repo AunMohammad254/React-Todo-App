@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Check, Trash2, Edit2, X } from "lucide-react";
+import { Check, Trash2, Edit2, X, ChevronUp, ChevronDown } from "lucide-react";
 import StyledInput from "./StyledInput";
 import StyledTextarea from "./StyledTextarea";
 
-const TodoItem = ({ todo, onUpdate, onDelete, onToggle }) => {
+const TodoItem = ({ todo, onUpdate, onDelete, onToggle, onMoveUp, onMoveDown, isFirst, isLast }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(todo.title);
   const [editDescription, setEditDescription] = useState(
@@ -66,6 +66,24 @@ const TodoItem = ({ todo, onUpdate, onDelete, onToggle }) => {
         </div>
       </div>
       <div className="todo-actions">
+        <div className="reorder-buttons">
+          <button 
+            onClick={() => onMoveUp(todo._id)} 
+            className="btn-reorder btn-move-up"
+            disabled={isFirst}
+            title="Move up"
+          >
+            <ChevronUp size={16} />
+          </button>
+          <button 
+            onClick={() => onMoveDown(todo._id)} 
+            className="btn-reorder btn-move-down"
+            disabled={isLast}
+            title="Move down"
+          >
+            <ChevronDown size={16} />
+          </button>
+        </div>
         <button onClick={() => setIsEditing(true)} className="btn-edit">
           <Edit2 size={18} />
         </button>

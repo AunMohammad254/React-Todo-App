@@ -80,6 +80,24 @@ const TodoApp = () => {
     }
   };
 
+  const handleMoveUp = (id) => {
+    const currentIndex = todos.findIndex(todo => todo._id === id);
+    if (currentIndex > 0) {
+      const newTodos = [...todos];
+      [newTodos[currentIndex], newTodos[currentIndex - 1]] = [newTodos[currentIndex - 1], newTodos[currentIndex]];
+      setTodos(newTodos);
+    }
+  };
+
+  const handleMoveDown = (id) => {
+    const currentIndex = todos.findIndex(todo => todo._id === id);
+    if (currentIndex < todos.length - 1) {
+      const newTodos = [...todos];
+      [newTodos[currentIndex], newTodos[currentIndex + 1]] = [newTodos[currentIndex + 1], newTodos[currentIndex]];
+      setTodos(newTodos);
+    }
+  };
+
   const handleLogout = () => {
     logout();
     navigate("/login");
@@ -196,13 +214,17 @@ const TodoApp = () => {
                 </p>
               </div>
             ) : (
-              filteredTodos.map((todo) => (
+              filteredTodos.map((todo, index) => (
                 <TodoItem
                   key={todo._id}
                   todo={todo}
                   onUpdate={handleUpdateTodo}
                   onDelete={handleDeleteTodo}
                   onToggle={handleToggleTodo}
+                  onMoveUp={handleMoveUp}
+                  onMoveDown={handleMoveDown}
+                  isFirst={index === 0}
+                  isLast={index === filteredTodos.length - 1}
                 />
               ))
             )}
