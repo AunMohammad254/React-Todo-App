@@ -13,7 +13,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
 
-[🚀 Live Demo](https://your-todo-app.vercel.app) • [📖 Documentation](https://github.com/yourusername/todo-app/wiki) • [🐛 Report Bug](https://github.com/yourusername/todo-app/issues)
+[🚀 Live Demo](https://react-todo-app-five-delta.vercel.app) or [📖 Documentation](https://github.com/yourusername/todo-app/wiki) • [🐛 Report Bug](https://github.com/yourusername/todo-app/issues)
 
 </div>
 
