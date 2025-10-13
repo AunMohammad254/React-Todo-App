@@ -6,7 +6,7 @@ import StyledInput from "../components/StyledInput";
 import ThemeToggle from "../components/ThemeToggle";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ emailOrUsername: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
@@ -17,11 +17,51 @@ const Login = () => {
     setError("");
   };
 
+  // Helper function to validate email format
+  const isEmail = (input) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(input);
+  };
+
+  // Helper function to validate username format
+  const isValidUsername = (input) => {
+    // Username should be at least 3 characters, alphanumeric and underscores
+    const usernameRegex = /^[a-zA-Z0-9_]{3,}$/;
+    return usernameRegex.test(input);
+  };
+
+  const validateInput = () => {
+    const { emailOrUsername, password } = formData;
+    
+    if (!emailOrUsername.trim()) {
+      setError("Email or username is required");
+      return false;
+    }
+    
+    if (!password) {
+      setError("Password is required");
+      return false;
+    }
+    
+    // Check if input is neither valid email nor valid username
+    if (!isEmail(emailOrUsername) && !isValidUsername(emailOrUsername)) {
+      setError("Please enter a valid email address or username (3+ characters, letters, numbers, and underscores only)");
+      return false;
+    }
+    
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!validateInput()) {
+      return;
+    }
+    
     setLoading(true);
     try {
-      await login(formData.email, formData.password);
+      await login(formData.emailOrUsername, formData.password);
       navigate("/todos");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
@@ -46,13 +86,13 @@ const Login = () => {
 
         <form onSubmit={handleSubmit} className="auth-form">
           <StyledInput
-            type="email"
-            name="email"
-            value={formData.email}
+            type="text"
+            name="emailOrUsername"
+            value={formData.emailOrUsername}
             onChange={handleChange}
             required
-            label="Email"
-            placeholder="Enter your email address"
+            label="Email or Username"
+            placeholder="Enter your email or username"
           />
 
           <StyledInput
