@@ -63,6 +63,7 @@ const Login = () => {
             required
             label="Password"
             placeholder="Enter your password"
+            isPassword={true}
           />
 
           <button type="submit" className="btn-primary" disabled={loading}>
