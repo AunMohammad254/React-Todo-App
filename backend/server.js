@@ -16,7 +16,8 @@ app.use(cors({
     'http://localhost:5173',
     'http://localhost:3000',
     'https://react-todo-app-git-main-aunmohammad254s-projects.vercel.app',
-    'https://react-todo-app-five-delta.vercel.app'
+    'https://react-todo-app-five-delta.vercel.app',
+    'https://react-todo-4s2q780tw-aunmohammad254s-projects.vercel.app',
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
